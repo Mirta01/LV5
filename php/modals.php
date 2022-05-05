@@ -1,16 +1,24 @@
 <?php
-    echo "hahah";
+include "connection.php";
+
+    $title = "";
     if (isset($_GET["modal_id"]))
     {
         $stat = $_GET["modal_id"];
-
+        
         switch ($stat)
         {
             case 'new_employee':
+                $title = "New employee";
+                $sQuery = "SELECT * FROM employees LIMIT 25;";
+                $oRecord = $Connection->query($sQuery);
+                $aEmployees = array();
                 break;
             case 'edit_employee':
+                $title = "Edit employee";
                 break;
             case 'delete_employee':
+                $title = "Delete employee";
                 break;
             case 'new_department':
                 break;
@@ -24,14 +32,14 @@
     }
     else
     {
-        echo "baqnana";
+        echo "";
     }
 ?>
 
 <div class="modal-body" style="padding:0">
  <div class="modal-header" style="margin-bottom:25px;">
- <button style="color:white" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
- <h4 class="modal-title" style="color:white">Title</h4>
+ <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+ <h4 class="modal-title"><?php echo $title; ?></h4>
  </div>
  <form class="form-horizontal">
  <div class="form-group">

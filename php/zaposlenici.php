@@ -13,6 +13,7 @@
 </head>
 <body>
 <h3>Zaposlenici</h3>
+<button class="btn btn-primary" onclick="GetModal('modals.php?modal_id=new_employee')">Add</button>
 <table id="tableZaposlenici" class="table table-striped">
     <thead class="thead-dark">  
       <tr>
