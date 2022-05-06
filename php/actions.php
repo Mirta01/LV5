@@ -9,12 +9,12 @@ switch ($_POST['choice']) {
         break;
     }
     case "UpdateEmployee":{
-        $sQuery ="UPDATE employees SET first_name='".$_POST['name']."', last_name='".$_POST['lastName']."', birth_date='".$_POST['birth']."', gender='".$_POST['gender']."' WHERE emp_no=".$_POST['id'];
+        $sQuery ="UPDATE employees SET first_name='".$_POST['first_name']."', last_name='".$_POST['last_name']."', birth_date='".$_POST['birth_date']."', gender='".$_POST['gender']."' WHERE emp_no=".$_POST['emp_no'];
         $oStatement = $Connection->query($sQuery);
         break;
     }
     case "DeleteEmployee":{
-        $sQuery="DELETE FROM employees WHERE emp_no=".$_POST['id'];
+        $sQuery="DELETE FROM employees WHERE emp_no=".$_POST['emp_no'];
         $oStatement = $Connection->query($sQuery);
         break;
     }

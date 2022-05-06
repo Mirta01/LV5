@@ -46,9 +46,12 @@ include "connection.php";
                     <label class="col-md-3 control-label">spol</label>
                     <div class="col-md-8"><input type="text" id="edit-gender" value="'.$_GET['gender'].'" class="form-control" placeholder="" /></div>
                     </div>';
+                $function = "UpdateEmployee(".$_GET['emp_no'].")";
                 break;
             case 'delete_employee':
                 $title = "Delete employee";
+                $modalContent = "Sigurni ste da želite obrisati zaposlenika ".$_GET['first_name']." ".$_GET['last_name']."?";
+                $function = "DeleteEmployee(".$_GET['emp_no'].")";
                 break;
             case 'new_department':
                 break;
