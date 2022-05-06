@@ -25,12 +25,15 @@ if (isset($_GET["json_id"]))
         case 'get_all_departments':
             $sQuery = "SELECT * FROM departments LIMIT 15;";
             $oRecord = $Connection->query($sQuery);
+            $aDept = array();
 
             while($oRow = $oRecord->fetch(PDO::FETCH_BOTH) )
             {
-                echo json_encode($oRow);
+                $oDept = new Department($oRow['dept_no'],$oRow['dept_name']);
+                array_push($aDept, $oDept);
             }
-
+            
+            echo json_encode($aDept);
             break;
         case 'get_employee_by_id':
             $sQuery = "SELECT * FROM employees WHERE emp_no=". $_GET['employee_id'];;
