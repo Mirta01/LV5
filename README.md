@@ -10,10 +10,10 @@ mysqld --console
 
 ## Installation
 ```
-mysqld --console --initialise
+mysqld --console --initialize
 ```
 
-Copy root password and login over workbench.
+Copy root password and login over workbench. 
 
 ```
 mysqld --console

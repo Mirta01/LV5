@@ -11,7 +11,7 @@ if (isset($_GET["json_id"]))
     switch ($stat)
     {
         case 'get_all_employees':
-            $sQuery = "SELECT * FROM employees LIMIT 25;";
+            $sQuery = "SELECT * FROM employees ORDER BY emp_no DESC LIMIT 15;";
             $oRecord = $Connection->query($sQuery);
             $aEmployees = array();
             

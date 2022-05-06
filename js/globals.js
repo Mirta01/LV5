@@ -5,4 +5,3 @@ function GetModal(sHref) {
         show: true
     });
 }
-   
