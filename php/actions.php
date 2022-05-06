@@ -19,7 +19,7 @@ switch ($_POST['choice']) {
         break;
     }
     case "NewDepartmente":{
-        $sQuery = "INSERT INTO departments (dept_no, dept_name) VALUES ('".$_POST['id']."', '".$_POST['name']."');";
+        $sQuery = "INSERT INTO departments (dept_no, dept_name) SELECT MAX(dept_no) + 1, '".$_POST['dept_name']."' FROM departments;";
         $oStatement = $Connection->query($sQuery);
         break;
     }
@@ -29,7 +29,7 @@ switch ($_POST['choice']) {
         break;
     }
     case "DeleteDepartmente":{
-        $sQuery='DELETE FROM departments WHERE dept_no="'.$_POST['id'].'";';
+        $sQuery='DELETE FROM departments WHERE dept_no="'.$_POST['dept_no'].'";';
         $oStatement = $Connection->query($sQuery);
         break;
     }  

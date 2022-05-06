@@ -54,10 +54,19 @@ include "connection.php";
                 $function = "DeleteEmployee(".$_GET['emp_no'].")";
                 break;
             case 'new_department':
+                $title = "New employee";
+                $modalContent = '<div class="form-group">
+                        <label class="col-md-3 control-label">Department name</label>
+                        <div class="col-md-8"><input type="text" class="form-control" id="new-dept_name"/></div>
+                    </div>';
+                $function = "NewDepartment()";
                 break;
             case 'edit_department':
                 break;
             case 'delete_department':
+                $title = "Delete department";
+                $modalContent = "Sigurni ste da želite obrisati odjel ".$_GET['dept_name']."?";
+                $function = "DeleteDepartment(".$_GET['dept_no'].")";
                 break;
             default:
                 break;

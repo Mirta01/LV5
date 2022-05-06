@@ -32,7 +32,7 @@ function NewDepartment() {
         data:
         {
             "choice": "NewDepartmente",
-            "dept_name": $("#new-first_name").val(),
+            "dept_name": $("#new-dept_name").val(),
         },
         success: function (oData)
         {
